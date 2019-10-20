@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 alert-success rounded p-2">
+                <div class="m-auto text-center border bg-dark">
+                    <img src="../images/logo.png" class="img-fluid rounded-circle w-25" >
+                    <p class="text-light">${sessionScope.user.name}</p>
+                </div>
+                <div class="list-group">
+                    <a href="changePage?page=college" class="list-group-item list-group-item-action">College</a>
+                    <a href="changePage?page=librarian" class="list-group-item list-group-item-action list-group-item-primary">Librarian</a>
+                    <a href="changePage?page=books" class="list-group-item list-group-item-action list-group-item-secondary">Book</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-success">Department</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-danger">Subject</a>
+                    <a href="changePage?page=profile" class="list-group-item list-group-item-action list-group-item-warning">Profile</a>
+                    <a href="logout" class="list-group-item list-group-item-action list-group-item-info">Logout</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

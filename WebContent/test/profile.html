@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="col-md-6 col-sm-12 m-auto">
+        <div class="row m-auto">
+            <img src="../images/logo.png" class="img-fluid rounded-circle m-auto" id="target">
+        </div>
+        <form method="post" action="addLibrarian" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Image:</label>
+                        <input class="form-control" type="file" id="src" name="pic">
+                        <script>
+                            var src = document.getElementById("src");
+                            var target = document.getElementById("target");
+                            showImage(src, target);
+                        </script>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="addlname">Name:</label>
+                        <input class="form-control" id="addlname" name="name">
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="addlcontact">Contact:</label> <input
+                            class="form-control" id="addlcontact" name="cell">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="addlPassword">Password:</label>
+                        <input class="form-control" id="addlPassword" name="password"  type="password">
+                    </div>
+                </div>
+                <div class="form-row">
+
+                    <div class="form-group col-md-12">
+                        <label for="addlcPassword">Confirm Password:</label> <input
+                            class="form-control" id="addlcPassword" name="cPassword"
+                            type="password">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <button class="btn btn-success btn-block" >Save</button>
+                </div>
+        </form>
+    </div>
+</body>
+</html>

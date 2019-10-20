@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subject</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../fontawesome/css/all.css">
+</head>
+<body>
+<div class="col-md-9">
+    <h3 class="h3 text-center bg-dark text-info p-3">Subject Management</h3>
+    <button class="btn btn-success btn-block mb-2 mt-2" data-toggle="modal"
+            data-target="#addCollege">Add Subject</button>
+    <!-- Modal -->
+    <div class="modal fade" id="addCollege" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Subject</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post" action=addDept>
+                    <div class="modal-body">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="addcisbn">Title:</label> <input class="form-control" id="addcisbn" name="code">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="addctitle">Call No:</label> <input class="form-control" id="addctitle" name="name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save
+                            changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-warning" role="alert">${param.msg}</div>
+    <!--<%-->
+    <!--List<Dept> depts = (List<Dept>) request.getAttribute("departments");-->
+    <!--int i=0;-->
+    <!--for (Dept dept : depts) {-->
+    <!--String image = Base64.encodeBase64String(dept.getLogo());-->
+    <!--i++;-->
+    <!--%>-->
+    <div style="background-color: #f7ecb5; border-radius: 10px">
+        <table class="table table-responsive-md">
+
+            <tr class="">
+                <td class="p-2">Subject Title:</td>
+                <td class="p-2"><%=dept.getName()%></td>
+            </tr>
+            <tr class="">
+                <td class="p-2">Call No:</td>
+                <td class="p-2"><a href='<%=dept.getWebsite()%>'><%=dept.getWebsite()%></a>
+                    <div class="btn-group">
+                        <button class="btn btn-success" data-toggle="modal"
+                                data-target="#1">Edit</button>
+                    </div>
+                    <div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="1" tabindex="-1"
+                             role="dialog" aria-labelledby="exampleModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="m">Edit Subject</h5>
+                                        <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form method="post" action="updateDept" enctype="multipart/form-data">
+                                        <div class="modal-body">
+
+
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="website">Title:</label> <input
+                                                        class="form-control" id="website"
+                                                        value="<%=dept.getWebsite()%>" name="website">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="editcemail">Call No:</label> <input
+                                                        class="form-control" id="editcemail"
+                                                        value="<%=dept.getEmail()%>" name="email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
+                                            <button type="submit" name="code" value="<%=dept.getCode()%>" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--<%-->
+    <!--}-->
+    <!--%>-->
+</div>
+</body>
+</html>

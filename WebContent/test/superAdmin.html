@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        #dashList a li:hover {
+            background-color: #660000;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-3 alert-success rounded p-2">
+            <div class="m-auto text-center border">
+                <img src="../images/book.jpg" class="img-fluid rounded-circle" style="width: 100px;height: 100px" >
+            </div>
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+                   aria-controls="v-pills-home" aria-selected="true">College</a>
+                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+                   aria-controls="v-pills-profile" aria-selected="false">Librarian</a>
+                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+                   aria-controls="v-pills-messages" aria-selected="false">Book</a>
+                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
+                   aria-controls="v-pills-settings" aria-selected="false">Departments</a>
+                <a class="nav-link" id="v-pills-subject-tab" data-toggle="pill" href="#navsubject" role="tab"
+                   aria-controls="subject" aria-selected="false">Subjects</a>
+                <a class="nav-link" id="v-pills-logout-tab" data-toggle="pill" href="#navlogout" role="tab"
+                   aria-controls="subject" aria-selected="false">Logout</a>
+            </div>
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                     aria-labelledby="v-pills-home-tab"></div>
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                     aria-labelledby="v-pills-profile-tab"></div>
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                     aria-labelledby="v-pills-messages-tab"></div>
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                     aria-labelledby="v-pills-settings-tab"></div>
+                <div class="tab-pane fade" id="navsubject" role="tabpanel" aria-labelledby="v-pills-subject-tab"></div>
+                <div class="tab-pane fade" id="navlogout" role="tabpanel" aria-labelledby="v-pills-logout-tab"></div>
+            </div>
+        </div>
+        <div class="col-md-9">
+
+            <h3 class="h3 text-center bg-dark text-info p-3">College Management</h3>
+            <button class="btn btn-success btn-block mb-2 mt-2" data-toggle="modal" data-target="#exampleModal">Add
+                College
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add College</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" action="">
+                                <div class="form-row">
+                                    <img src="../images/book.jpg" class="m-auto">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="addcpic">Image:</label>
+                                        <input class="form-control" type="file" id="addcpic">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="addcisbn">Code:</label>
+                                        <input class="form-control" id="addcisbn">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="addctitle">Name:</label>
+                                        <input class="form-control" id="addctitle">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="addcwebsite">Website:</label>
+                                        <input class="form-control" id="addcwebsite">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="addcemail">Email:</label>
+                                        <input class="form-control" id="addcemail">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="addccontact">Contact:</label>
+                                        <input class="form-control" id="addccontact">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="addcaddress">Address:</label>
+                                        <input class="form-control" id="addcaddress">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color: #f7ecb5;border-radius:10px">
+                <table class="table table-responsive-md">
+                    <tr>
+                        <td rowspan="7"><img src="../images/book.jpg" class="img-fluid"></td>
+                    </tr>
+                    <tr class="">
+                        <td class="p-2">College Name:</td>
+                        <td class="p-2">Govt:degree college Pir jo goth</td>
+                    </tr>
+                    <tr class="">
+                        <td class="p-2">Website:</td>
+                        <td class="p-2">www.degreecollege.com</td>
+                    </tr>
+                    <tr class="">
+                        <td class="p-2">Email</td>
+                        <td class="p-2">degreecollege@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">Contact</td>
+                        <td class="p-2">03003115234</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">Address</td>
+                        <td class="p-2">KHP</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="text-center">
+                            <div class="btn-group">
+                                <button class="btn btn-success" data-toggle="modal" data-target="#editCollege">Edit</button>
+                                <button class="btn btn-danger">Delete</button>
+                            </div>
+                            <div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="editCollege" tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="m">Edit College</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="post" action="">
+                                                    <div class="form-row">
+                                                        <img src="../images/book.jpg" class="m-auto">
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="editcpic">Image:</label>
+                                                            <input class="form-control" type="file" id="editcpic">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="isbn">Code:</label>
+                                                            <input class="form-control" id="isbn">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="title">Name:</label>
+                                                            <input class="form-control" id="title">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="website">Website:</label>
+                                                            <input class="form-control" id="website">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="editcemail">Email:</label>
+                                                            <input class="form-control" id="editcemail">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="editccontact">Contact:</label>
+                                                            <input class="form-control" id="editccontact">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="address">Address:</label>
+                                                            <input class="form-control" id="address">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="background-color: #f7ecb5;border-radius:10px">
+                <table class="table table-responsive-md">
+                    <tr>
+                        <td rowspan="7"><img src="../images/book.jpg" class="img-fluid"></td>
+                    </tr>
+                    <tr class="">
+                        <td class="p-2">College Name:</td>
+                        <td class="p-2">Govt:degree college Pir jo goth</td>
+                    </tr>
+                    <tr class="">
+                        <td class="p-2">Website:</td>
+                        <td class="p-2">www.degreecollege.com</td>
+                    </tr>
+                    <tr class="">
+                        <td class="p-2">Email</td>
+                        <td class="p-2">degreecollege@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">Contact</td>
+                        <td class="p-2">03003115234</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">Address</td>
+                        <td class="p-2">KHP</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="text-center">
+                            <div class="btn-group">
+                                <button class="btn btn-success">Edit</button>
+                                <button class="btn btn-danger">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!--Librarian-->
+        <div class="col-md-9">
+
+            <h3 class="h3 text-center bg-dark text-info p-3">Librarian Management</h3>
+            <button class="btn btn-success btn-block mb-2 mt-2" data-toggle="modal" data-target="#addlibrarian">Add Librarian
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="addlibrarian" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="lib">Add Librarian</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" action="">
+                                <div class="form-row">
+                                    <img src="../images/book.jpg" class="m-auto">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="addlpic">Image:</label>
+                                        <input class="form-control" type="file" id="addlpic">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="addlname">Name:</label>
+                                        <input class="form-control" id="addlname">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="addlemail">Email:</label>
+                                        <input class="form-control" id="addlemail">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="addlPassword">Password:</label>
+                                        <input class="form-control" id="addlPassword">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="addlcPassword">Confirm Password:</label>
+                                        <input class="form-control" id="addlcPassword">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="addlcontact">Contact:</label>
+                                        <input class="form-control" id="addlcontact">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="addlpost">Post:</label>
+                                        <select class="form-control custom-select" id="addlpost">
+                                            <option>Super Admin</option>
+                                            <option>Admin</option>
+                                            <option>Librarian</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="addlCollege">College:</label>
+                                        <select class="form-control custom-select" id="addlCollege">
+                                            <option>A</option>
+                                            <option>B</option>
+                                            <option>C</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color: #f7ecb5;border-radius:10px">
+                <table class="table table-responsive-md">
+                    <tr>
+                        <td rowspan="8"><img src="../images/book.jpg" class="img-fluid"></td>
+                    </tr>
+                    <tr class="">
+                        <td class="p-2">Name:</td>
+                        <td class="p-2">Ashique</td>
+                    </tr>
+                    <tr class="">
+                        <td class="p-2">cell:</td>
+                        <td class="p-2">030000000000</td>
+                    </tr>
+                    <tr class="">
+                        <td class="p-2">Email</td>
+                        <td class="p-2">degreecollege@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">Password</td>
+                        <td class="p-2">1234</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">Post</td>
+                        <td class="p-2">Librarian</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">College</td>
+                        <td class="p-2">A</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="text-center">
+                            <div class="btn-group">
+                                <button class="btn btn-success" data-toggle="modal" data-target="#edit">Edit</button>
+                                <button class="btn btn-danger">Delete</button>
+                            </div>
+                            <div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                     aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="librarian">Edit Librarian</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="post" action="">
+                                                    <div class="form-row">
+                                                        <img src="../images/book.jpg" class="m-auto">
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="pic">Image:</label>
+                                                            <input class="form-control" type="file" id="pic">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="name">Name:</label>
+                                                            <input class="form-control" id="name">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="email">Email:</label>
+                                                            <input class="form-control" id="email">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="Password">Password:</label>
+                                                            <input class="form-control" id="Password">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="cPassword">Confirm Password:</label>
+                                                            <input class="form-control" id="cPassword">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="contact">Contact:</label>
+                                                            <input class="form-control" id="contact">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="post">Post:</label>
+                                                            <select class="form-control custom-select" id="post">
+                                                                <option>Super Admin</option>
+                                                                <option>Admin</option>
+                                                                <option>Librarian</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="College">College:</label>
+                                                            <select class="form-control custom-select" id="College">
+                                                                <option>A</option>
+                                                                <option>B</option>
+                                                                <option>C</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!--Book-->
+        <div class="col-md-9">
+
+            <h3 class="h3 text-center bg-dark text-info p-3">Book Management</h3>
+            <button class="btn btn-success btn-block mb-2 mt-2" data-toggle="modal" data-target="#addBook">Add Book
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="addBook" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="bk">Add Book</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="addbisbn">ISBN:</label>
+                                    <input class="form-control" id="addbisbn">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="addbtitle">Title:</label>
+                                    <input class="form-control" id="addbtitle">
+                                </div>
+                            </div>
+                            <div class="form-row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="edition">Edition:</label>
+                                    <input class="form-control" id="edition">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="volume">Volume:</label>
+                                    <input class="form-control" id="volume">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="subject">Subject:</label>
+                                    <select class="form-control" id="subject">
+                                        <option>A</option>
+                                        <option>A</option>
+                                        <option>A</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="publisher">Publisher:</label>
+                                    <input class="form-control" id="publisher">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="publication">Publication Year:</label>
+                                    <input class="form-control" id="publication">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="publicationplace">Publication Place:</label>
+                                    <input class="form-control" id="publicationplace">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="pages">Pages:</label>
+                                    <input class="form-control" id="pages">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="dept">Deptt:</label>
+                                    <select class="form-control" id="dept">
+                                        <option>A</option>
+                                        <option>A</option>
+                                        <option>A</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="billNo">Bill No:</label>
+                                    <input class="form-control" id="billNo">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="billDate">Bill Date:</label>
+                                    <input class="form-control" id="billDate">
+                                </div>
+                            </div>
+                            <div class="form-row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="location">Location:</label>
+                                    <input class="form-control" id="location">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="Author">Author:</label>
+                                    <input class="form-control" id="Author">
+                                </div>
+                            </div>
+                            <div class="form-row">
+
+                                <div class="form-group col-md-6">
+                                    <label for="Vendor">Vendor(Detailed Name):</label>
+                                    <input class="form-control" id="Vendor">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="noOfCopies">No of Copies:</label>
+                                    <input class="form-control" id="noOfCopies">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="image">Image:</label>
+                                    <input type="file" class="form-control " id="image">
+                                    <hr>
+
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="pdf">PDF file:</label>
+                                    <input class="form-control" type="file" id="pdf">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <img src="../images/ashgrove-library_8.jpg" class="img-fluid rounded">
+                                </div>
+                                <div id="dvd" class="form-group col-md-6">
+                                    <label for="dvd">CD/DVD:</label>
+                                    <input type="radio" name="dvd"><span>Yes</span>
+                                    <input type="radio" name="dvd"><span>No</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row  ">
+                <div class="col-md-3 m-auto text-center">
+                    <img src="../images/book.jpg" class="img-fluid">
+                </div>
+                <div class="col-md-9">
+                    <table class="table table-responsive-md">
+                        <tr>
+                            <td>Title:</td>
+                            <td>OOP</td>
+                            <td>Author:</td>
+                            <td>Ashique Ali</td>
+                        </tr>
+
+                        <tr>
+                            <td>Edition:</td>
+                            <td>2nd</td>
+                            <td>ISBN:</td>
+                            <td>1234567890</td>
+                        </tr>
+                        <tr>
+
+
+                            <td>Subject:</td>
+                            <td>Programming</td>
+                            <td>Call No:</td>
+                            <td>1001.CSE</td>
+                        </tr>
+                        <tr>
+
+                            <td>College:</td>
+                            <td>govt degree college pir jo goth</td>
+                            <td>Total Copies:</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+
+                            <td>Publisher:</td>
+                            <td>Sham</td>
+                            <td>Publication Year:</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+
+                            <td>Publication Place:</td>
+                            <td>Jam</td>
+                            <td>Pages:</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+
+                            <td>Department:</td>
+                            <td>SE</td>
+                            <td>Vendor:</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class=""><a
+                                    href="downloadPdf?barcode=<%=detailedBook.getBarcode()%>">Download
+                                PDF</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="m-auto text-center">
+                                <button class="btn btn-success btn-block" data-toggle="modal" data-target="#editBook">Edit</button>
+                                <div>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="editBook" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="eBook">Edit Book</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="editisbn">ISBN:</label>
+                                                            <input class="form-control" id="editisbn">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="edittitle">Title:</label>
+                                                            <input class="form-control" id="edittitle">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="editauthor">Author:</label>
+                                                            <input class="form-control" id="editauthor">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="editedition">Edition:</label>
+                                                            <input class="form-control" id="editedition">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="editsubject">Subject:</label>
+                                                            <select class="form-control" id="editsubject">
+                                                                <option>A</option>
+                                                                <option>A</option>
+                                                                <option>A</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="editpublisher">Publisher:</label>
+                                                            <input class="form-control" id="editpublisher">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="editpublication">Publication Year:</label>
+                                                            <input class="form-control" id="editpublication">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="editpublicationplace">Publication Place:</label>
+                                                            <input class="form-control" id="editpublicationplace">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="editpages">Pages:</label>
+                                                            <input class="form-control" id="editpages">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="editBcollege">College:</label>
+                                                            <select class="form-control" id="editBcollege">
+                                                                <option>A</option>
+                                                                <option>A</option>
+                                                                <option>A</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+
+                                                        <div class="form-group col-md-6">
+                                                            <label for="editdept">Department:</label>
+                                                            <select class="form-control" id="editdept">
+                                                                <option>A</option>
+                                                                <option>A</option>
+                                                                <option>A</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="editpdf">PDF file:</label>
+                                                            <input class="form-control" type="file" id="editpdf">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group">
+                                                            <label for="editimage">Image:</label>
+                                                            <input type="file" class="form-control " id="editimage">
+                                                            <hr>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-12">
+                                                            <img src="../images/ashgrove-library_8.jpg" class="img-fluid rounded">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <table class="table table-responsive-md">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Vendor</th>
+                        <th scope="col">Bill No</th>
+                        <th scope="col">Bill Date</th>
+                        <th scope="col">Accession Number</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">CD/DVD</th>
+                        <th scope="col">Operation</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td scope="col">100-MUET</td>
+                        <td scope="col">Yes</td>
+                        <td scope="col">1234</td>
+                        <td scope="col">100-MUET</td>
+                        <td scope="col">Yes</td>
+                        <td scope="col">1234</td>
+                        <td scope="col">
+                            <button class="btn btn-success btn-block" data-toggle="modal" data-target="#editBookDtl">Edit</button>
+                            <div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="editBookDtl" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="bkdtlE">Edit Book Detail</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="ebdbillNo">Vendor:</label>
+                                                            <input class="form-control" id="ebdVendor">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="ebdbillNo">Bill No:</label>
+                                                            <input class="form-control" id="ebdbillNo">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+
+                                                        <div class="form-group col-md-6">
+                                                            <label for="ebdbillDate">Bill Date:</label>
+                                                            <input class="form-control" id="ebdbillDate">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="ebdAccessionNo">Accession No:</label>
+                                                            <input class="form-control" id="ebdAccessionNo">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+
+                                                        <div class="form-group col-md-6">
+                                                            <label for="ebdlocation">Location:</label>
+                                                            <input class="form-control" id="ebdlocation">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="ebdAccessionNo">CD/DVD:</label>
+                                                                <input type="radio">Yes
+                                                                <input type="radio">No
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

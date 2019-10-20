@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div>
+            <form action="" method="post">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="isbn">ISBN:</label>
+                        <input class="form-control" id="isbn">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="title">Title:</label>
+                        <input class="form-control" id="title">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="author">Author:</label>
+                        <input class="form-control" id="author">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="edition">Edition:</label>
+                        <input class="form-control" id="edition">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="subject">Subject:</label>
+                        <select class="form-control" id="subject">
+                            <option>A</option>
+                            <option>A</option>
+                            <option>A</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="publisher">Publisher:</label>
+                        <input class="form-control" id="publisher">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="publication">Publication Year:</label>
+                        <input class="form-control" id="publication">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="publicationplace">Publication Place:</label>
+                        <input class="form-control" id="publicationplace">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="pages">Pages:</label>
+                        <input class="form-control" id="pages">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="vendor">Vendor Detail Name:</label>
+                        <input class="form-control" id="vendor">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="billNo">Bill No:</label>
+                        <input class="form-control" id="billNo">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="billDate">Bill Date:</label>
+                        <input class="form-control" id="billDate">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="dept">College/Deptt:</label>
+                        <select class="form-control" id="dept">
+                            <option>A</option>
+                            <option>A</option>
+                            <option>A</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="location">Location:</label>
+                        <input class="form-control" id="location">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="image">Image:</label>
+                        <input type="file" class="form-control " id="image">
+                        <hr>
+                        <img src="images/ashgrove-library_8.jpg" class="img-fluid rounded">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="pdf">PDF file:</label>
+                        <input class="form-control" type="file" id="pdf">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="dvd">CD/DVD:</label>
+                        <div id="dvd">
+                            <input class="form-control" type="radio" name="dvd">Yes
+                            <input class="form-control" type="radio" name="dvd">No
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <table class="table table-responsive">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Union Cat No:</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Edition</th>
+                <th scope="col">ISBN No</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Call No</th>
+                <th scope="col">College</th>
+                <th scope="col">Location</th>
+                <th scope="col">Accession No</th>
+                <th scope="col">Number Of Copies</th>
+                <th scope="col">PDF</th>
+                <th scope="col">Edit</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>3</td>
+                <td><a href="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter">OOP</a></td>
+                <td>Mian Shahab</td>
+                <td>3<sup>rd</sup></td>
+                <td>8176354236</td>
+                <td>Programming Languages</td>
+                <td>100</td>
+                <td>N.Jamshoro</td>
+                <td>Jamshoro</td>
+                <td>10001</td>
+                <td>50</td>
+                <td><a href="#">Download PDF</a></td>
+
+                <td><button class="btn btn-success">Edit</button></td>
+
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>3</td>
+                <td><a href="#">OOP</a></td>
+                <td>Mian Shahab</td>
+                <td>3<sup>rd</sup></td>
+                <td>8176354236</td>
+                <td>Programming Languages</td>
+                <td>100</td>
+                <td>N.Jamshoro</td>
+                <td>Jamshoro</td>
+                <td>10001</td>
+                <td>50</td>
+                <td><a href="#">Download PDF</a></td>
+                <td><button class="btn btn-success">Edit</button></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>3</td>
+                <td><a href="#">OOP</a></td>
+                <td>Mian Shahab</td>
+                <td>3<sup>rd</sup></td>
+                <td>8176354236</td>
+                <td>Programming Languages</td>
+                <td>100</td>
+                <td>N.Jamshoro</td>
+                <td>Jamshoro</td>
+                <td>10001</td>
+                <td>50</td>
+                <td><a href="#">Download PDF</a></td>
+                <td><button class="btn btn-success">Edit</button></td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>3</td>
+                <td><a href="#">OOP</a></td>
+                <td>Mian Shahab</td>
+                <td>3<sup>rd</sup></td>
+                <td>8176354236</td>
+                <td>Programming Languages</td>
+                <td>100</td>
+                <td>N.Jamshoro</td>
+                <td>Jamshoro</td>
+                <td>10001</td>
+                <td>50</td>
+                <td><a href="#">Download PDF</a></td>
+                <td><button class="btn btn-success">Edit</button></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="btn-group">
+            <button class="btn btn-success">Save</button>
+            <button class="btn btn-danger">Save</button>
+            <button class="btn btn-dark">Save</button>
+            <button class="btn btn-info">Save</button>
+            <button class="btn btn-warning">Save</button>
+            <button class="btn btn-light">Save</button>
+            <button class="btn btn-toolbar">Save</button>
+        </div>
+    </div>
+</body>
+</html>

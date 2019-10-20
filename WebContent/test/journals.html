@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Articles</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
+
+</head>
+<body>
+<div class="container border">
+    <div class="row">
+        <div class="col-md-3">
+            <h1>helo</h1>
+        </div>
+        <div class="col-md-9">
+            <!-- Button trigger modal journal -->
+            <button type="button" class="btn btn-primary fa fa-2x fa-plus-circle" data-toggle="modal" data-target="#exampleModal"></button>
+
+            <!-- Add Journal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <form method="post" action="#">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add Journal</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="form-row">
+                                    <label class="form-group col-md-6">Journal Title*
+                                        <input class="form-control">
+                                    </label>
+                                    <label class="form-group col-md-6">Issuance*
+                                        <input class="form-control" >
+                                    </label>
+                                </div>
+                                <div class="form-row">
+                                    <label class="form-group col-md-6">Volume*
+                                        <input type="number" class="form-control">
+                                    </label>
+                                    <label class="form-group col-md-6">Year*
+                                        <input type="number" class="form-control">
+                                    </label>
+                                </div>
+                                <div class="form-row">
+                                    <label class="form-group col-md-6">E-ISSN*
+                                        <input class="form-control">
+                                    </label>
+                                    <label class="form-group col-md-6">P-ISSN*
+                                        <input class="form-control">
+                                    </label>
+                                </div>
+                                <div class="form-row">
+                                    <label class="form-group col-md-6">Publisher*
+                                        <input class="form-control">
+                                    </label>
+                                    <label class="form-group col-md-6">Email*
+                                        <input class="form-control">
+                                    </label>
+                                </div>
+                                <div class="form-row">
+                                    <label class="form-group col-md-12">Website*
+                                        <input class="form-control">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <!--Edit Journal-->
+                <div class="modal fade" id="editarticle" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <form method="post" action="#">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Edit Journal</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="form-row">
+                                        <label class="form-group col-md-6">Journal Title*
+                                            <input class="form-control">
+                                        </label>
+                                        <label class="form-group col-md-6">Issuance*
+                                            <input class="form-control" >
+                                        </label>
+                                    </div>
+                                    <div class="form-row">
+                                        <label class="form-group col-md-6">Volume*
+                                            <input type="number" class="form-control">
+                                        </label>
+                                        <label class="form-group col-md-6">Year*
+                                            <input type="number" class="form-control">
+                                        </label>
+                                    </div>
+                                    <div class="form-row">
+                                        <label class="form-group col-md-6">E-ISSN*
+                                            <input class="form-control">
+                                        </label>
+                                        <label class="form-group col-md-6">P-ISSN*
+                                            <input class="form-control">
+                                        </label>
+                                    </div>
+                                    <div class="form-row">
+                                        <label class="form-group col-md-6">Publisher*
+                                            <input class="form-control">
+                                        </label>
+                                        <label class="form-group col-md-6">Email*
+                                            <input class="form-control">
+                                        </label>
+                                    </div>
+                                    <div class="form-row">
+                                        <label class="form-group col-md-12">Website*
+                                            <input class="form-control">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-info text-white mt-2">
+                <h4 class="card-header ">Article Title<button class="btn btn-danger rounded-circle float-right" data-toggle="modal" data-target="#editarticle">Edit</button></h4>
+
+                <div class="card-body">
+                    <!--<h4 class="card-title">Article Tit</h4>-->
+                    <table class="table table-responsive-md table-hover">
+                        <tr>
+                            <th class="font-weight-bold">First Author:</th>
+                            <td>AAAAAAA</td>
+                            <th>Second Author:</th>
+                            <td>AAAAAAA</td>
+                            <th>Third Author:</th>
+                            <td>AAAAAAA</td>
+
+                        </tr>
+                        <tr>
+                            <th>Issuance:</th>
+                            <td>AAAAAAA</td>
+                            <th>Volume:</th>
+                            <td>AAAAAAA</td>
+                            <th>Year:</th>
+                            <td>AAAAAAA</td>
+                        </tr>
+                        <tr>
+                            <th>Journal Title:</th>
+                            <td>AAAAAAA</td>
+                            <th>E-ISSN:</th>
+                            <td>AAAAAAA</td>
+                            <th>P-ISSN:</th>
+                            <td>AAAAAAA</td>
+                        </tr>
+                        <tr>
+                            <th>Publisher:</th>
+                            <td>AAAAAAA</td>
+                            <th>Website:</th>
+                            <td>AAAAAAA</td>
+                            <th>Email:</th>
+                            <td>AAAAAAA</td>
+
+                        </tr>
+                        <tr>
+                            <th>Other Author:</th>
+                            <td>AAAAAAA</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="card bg-info text-white mt-2">
+                <h4 class="card-header ">Article Title</h4>
+                <div class="card-body">
+                    <!--<h4 class="card-title">Article Tit</h4>-->
+                    <table class="table table-responsive-md table-hover">
+                        <tr>
+                            <th class="font-weight-bold">First Author:</th>
+                            <td>AAAAAAA</td>
+                            <th>Second Author:</th>
+                            <td>AAAAAAA</td>
+                            <th>Third Author:</th>
+                            <td>AAAAAAA</td>
+
+                        </tr>
+                        <tr>
+                            <th>Issuance:</th>
+                            <td>AAAAAAA</td>
+                            <th>Volume:</th>
+                            <td>AAAAAAA</td>
+                            <th>Year:</th>
+                            <td>AAAAAAA</td>
+                        </tr>
+                        <tr>
+                            <th>Journal Title:</th>
+                            <td>AAAAAAA</td>
+                            <th>E-ISSN:</th>
+                            <td>AAAAAAA</td>
+                            <th>P-ISSN:</th>
+                            <td>AAAAAAA</td>
+                        </tr>
+                        <tr>
+                            <th>Publisher:</th>
+                            <td>AAAAAAA</td>
+                            <th>Website:</th>
+                            <td>AAAAAAA</td>
+                            <th>Email:</th>
+                            <td>AAAAAAA</td>
+
+                        </tr>
+                        <tr>
+                            <th>Other Author:</th>
+                            <td>AAAAAAA</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="card bg-info text-white mt-2">
+                <h4 class="card-header ">Article Title</h4>
+                <div class="card-body">
+                    <!--<h4 class="card-title">Article Tit</h4>-->
+                    <table class="table table-responsive-md table-hover">
+                        <tr>
+                            <th class="font-weight-bold">First Author:</th>
+                            <td>AAAAAAA</td>
+                            <th>Second Author:</th>
+                            <td>AAAAAAA</td>
+                            <th>Third Author:</th>
+                            <td>AAAAAAA</td>
+
+                        </tr>
+                        <tr>
+                            <th>Issuance:</th>
+                            <td>AAAAAAA</td>
+                            <th>Volume:</th>
+                            <td>AAAAAAA</td>
+                            <th>Year:</th>
+                            <td>AAAAAAA</td>
+                        </tr>
+                        <tr>
+                            <th>Journal Title:</th>
+                            <td>AAAAAAA</td>
+                            <th>E-ISSN:</th>
+                            <td>AAAAAAA</td>
+                            <th>P-ISSN:</th>
+                            <td>AAAAAAA</td>
+                        </tr>
+                        <tr>
+                            <th>Publisher:</th>
+                            <td>AAAAAAA</td>
+                            <th>Website:</th>
+                            <td>AAAAAAA</td>
+                            <th>Email:</th>
+                            <td>AAAAAAA</td>
+
+                        </tr>
+                        <tr>
+                            <th>Other Author:</th>
+                            <td>AAAAAAA</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Department</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="row">
+<div class="col-md-3">
+        dssd
+    </div>
+    <div class="col-md-9">
+
+        <h3 class="h3 text-center bg-dark text-info p-3">College Management</h3>
+        <button class="btn btn-success btn-block mb-2 mt-2" data-toggle="modal" data-target="#exampleModal">Add Department</button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Department</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="">
+                            <div class="form-row">
+                                <img src="../images/book.jpg" class="m-auto">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="addcpic">Logo:</label>
+                                    <input class="form-control" type="file" id="addcpic">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="addcisbn">Code:</label>
+                                    <input class="form-control" id="addcisbn">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="addctitle">Name:</label>
+                                    <input class="form-control" id="addctitle">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="addcwebsite">Website:</label>
+                                    <input class="form-control" id="addcwebsite">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="addcemail">Email:</label>
+                                    <input class="form-control" id="addcemail">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="addccontact">Contact:</label>
+                                    <input class="form-control" id="addccontact">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="addcaddress">Address:</label>
+                                    <input class="form-control" id="addcaddress">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background-color: #f7ecb5;border-radius:10px">
+            <table class="table table-responsive-md">
+                <tr>
+                    <td rowspan="7"><img src="../images/book.jpg" class="img-fluid"></td>
+                </tr>
+                <tr class="">
+                    <td class="p-2">College Name:</td>
+                    <td class="p-2">Govt:degree college Pir jo goth</td>
+                </tr>
+                <tr class="">
+                    <td class="p-2">Website:</td>
+                    <td class="p-2">www.degreecollege.com</td>
+                </tr>
+                <tr class="">
+                    <td class="p-2">Email</td>
+                    <td class="p-2">degreecollege@gmail.com</td>
+                </tr>
+                <tr>
+                    <td class="p-2">Contact</td>
+                    <td class="p-2">03003115234</td>
+                </tr>
+                <tr>
+                    <td class="p-2">Address</td>
+                    <td class="p-2">KHP</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-center">
+                        <div class="btn-group">
+                            <button class="btn btn-success" data-toggle="modal" data-target="#editCollege">Edit</button>
+                            <button class="btn btn-danger">Delete</button>
+                        </div>
+                        <div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="editCollege" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="m">Edit College</h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="post" action="">
+                                                <div class="form-row">
+                                                    <img src="../images/book.jpg" class="m-auto">
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-12">
+                                                        <label for="editcpic">Image:</label>
+                                                        <input class="form-control" type="file" id="editcpic">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="isbn">Code:</label>
+                                                        <input class="form-control" id="isbn">
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="title">Name:</label>
+                                                        <input class="form-control" id="title">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="website">Website:</label>
+                                                        <input class="form-control" id="website">
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="editcemail">Email:</label>
+                                                        <input class="form-control" id="editcemail">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="editccontact">Contact:</label>
+                                                        <input class="form-control" id="editccontact">
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="address">Address:</label>
+                                                        <input class="form-control" id="address">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                Close
+                                            </button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="background-color: #f7ecb5;border-radius:10px">
+            <table class="table table-responsive-md">
+                <tr>
+                    <td rowspan="7"><img src="../images/book.jpg" class="img-fluid"></td>
+                </tr>
+                <tr class="">
+                    <td class="p-2">College Name:</td>
+                    <td class="p-2">Govt:degree college Pir jo goth</td>
+                </tr>
+                <tr class="">
+                    <td class="p-2">Website:</td>
+                    <td class="p-2">www.degreecollege.com</td>
+                </tr>
+                <tr class="">
+                    <td class="p-2">Email</td>
+                    <td class="p-2">degreecollege@gmail.com</td>
+                </tr>
+                <tr>
+                    <td class="p-2">Contact</td>
+                    <td class="p-2">03003115234</td>
+                </tr>
+                <tr>
+                    <td class="p-2">Address</td>
+                    <td class="p-2">KHP</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-center">
+                        <div class="btn-group">
+                            <button class="btn btn-success">Edit</button>
+                            <button class="btn btn-danger">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
